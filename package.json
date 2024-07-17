@@ -1,7 +1,7 @@
 {
   "name": "@plugins/vue-plugin",
   "private": false,
-  "version": "1.0.23",
+  "version": "1.0.0",
   "main": "lib/vue-web.js",
   "module": "lib/vue-web.umd.cjs",
   "type": "module",
@@ -11,7 +11,7 @@
   ],
   "author": {
     "name": "zhanglk",
-    "email": "zhanglk@jiaparts.com"
+    "email": "510262683@qq.com"
   },
   "scripts": {
     "dev": "vite",
