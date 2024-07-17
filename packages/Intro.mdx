@@ -1,0 +1,51 @@
+# vue-web
+
+# 安装
+
+```Base
+pnpm install @my-plugins/vue-web
+```
+
+# 更新
+
+```Base
+pnpm update @my-plugins/vue-web
+```
+
+# 引入css
+
+```javascript
+import "@my-plugins/vue-web/dist/style.css";
+```
+# utils方法使用
+
+```javascript
+import { utils } from "@my-plugins/vue-web";
+
+const { Toast, formatTime,httpV2 } = utils;
+
+```
+
+# 如何发布到npm
+每次修改packages中的源码后,提交npm之前先修改`package.json`中的version,然后build再提交到npm中
+1.  先build
+```Base
+    pnpm build
+```
+    
+2.  设置 `pnpm` 的 `registry` 为开发源
+```Base
+    pnpm config set registry http://172.23.50.21:4873/
+```
+
+3.  执行命令 `pnpm login` 登录到 `pnpm`
+```Base
+    pnpm login
+```
+    
+4.  执行命令 `pnpm publish` 发布到 `pnpm`
+```Base
+    pnpm publish
+```
+    
+

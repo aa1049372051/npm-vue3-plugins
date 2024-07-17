@@ -1,0 +1,50 @@
+variables:
+  npmAddress: "121.36.160.77:4873"
+  token: "MDAxYzg3ZjliZTU4MTRhZTc0ZmRhOTdiZTIwN2FjNjM6OTVlYTIxYWY2OWExOGE2NzdjZTBjZTRh"
+
+.job_template: &job_definition
+  before_script:
+  - pwd && ls -al
+
+
+stages:
+  - build
+  - cleanup
+cache:
+  policy: pull-push
+  unprotect: false
+  untracked: false
+  when: on_success
+  paths:
+    - node_modules/
+
+
+build:
+  stage: build
+  <<: *job_definition
+  tags:
+    - node
+  script:
+    - nvm use 18.20.2
+    - npm install -g pnpm
+    - export NODE_OPTIONS=--openssl-legacy-provider
+    - pnpm config set registry "http://${npmAddress}/"
+    - echo "${loginToken}"
+    - pnpm config set -- '//${npmAddress}/:_authToken' "${token}"
+    - pnpm whoami
+    - pnpm install && pnpm run build
+    - echo 'build done'
+    - pnpm publish --no-git-checks
+    - echo "publish done"
+
+  when: manual
+
+cleanup:
+  stage: cleanup
+  tags:
+    - node
+  script:
+    - pwd && ls -al
+  when: on_success
+  needs:
+    - build

@@ -1,0 +1,97 @@
+import { Meta, Source, Canvas, Primary, Controls, Story } from "@storybook/blocks";
+import * as WossUploadStories from "./wossupload.stories.ts";
+
+
+<Meta of={WossUploadStories} />
+
+
+# 文件上传
+
+文件上传组件
+
+<Primary />
+
+## Props
+
+<Controls />
+
+# 页面引用
+
+```javascript
+import {  WOssUpload } from "@my-plugins/vue-web";
+
+```
+
+
+
+
+# 上传基本用法
+
+
+```javascript
+<template>
+      <WOssUpload
+        ref="uploadRef"
+        importType="Web"
+        :my-file="{
+          importType: '.png,.jpg',
+          listType: 'text',
+          fileCount: 1,
+        }"
+        :show-tips="false"
+        :show-file-name="false"
+        @uploadSuccess="(files)=>{console.log('上传成功',files)}"
+      >
+        <el-button link type="primary">上传</el-button>
+      </WOssUpload>
+</template>
+```
+
+# 获取文件列表
+
+```javascript
+import { ref } from "vue";
+const uploadRef = ref();
+//父组件中获取上传文件列表
+uploadRef.value.fileList
+//判断是否在上传 true在上传/false不在
+uploadRef.value.isStart  
+
+```
+
+# 实现用户上传
+
+<Canvas of={WossUploadStories.Base} />
+
+
+
+# fileList初始化文件
+
+
+```javascript
+<template>
+      <WOssUpload
+        importType="Web"
+        :my-file="{
+          importType: '.png,.jpg',
+          listType: 'text',
+          fileCount: 1,
+          fileList: [
+        {
+          filePath:
+            "https://img2.baidu.com/it/u=257191799,4243921961&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=854",
+          fileName: "1.jpg",
+        },
+      ],
+        }"
+        :show-tips="false"
+        :show-file-name="false"
+      >
+        <el-button link type="primary">上传</el-button>
+      </WOssUpload>
+</template>
+```
+
+# 实现用户上传
+
+<Canvas of={WossUploadStories.Files} />

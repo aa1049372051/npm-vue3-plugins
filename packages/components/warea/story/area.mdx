@@ -1,0 +1,71 @@
+import { Meta, Source, Canvas,Title, Subtitle, Description, Primary, Controls, Story  } from "@storybook/blocks";
+import * as WAreaStories from "./warea.stories.ts";
+
+
+
+<Meta of={WAreaStories} />
+
+
+
+# 省市区
+
+选择省市区
+
+<Primary />
+
+#  Description
+<Description of={WAreaStories.Base} />
+
+## Props
+
+<Controls />
+
+# 页面引用
+
+```javascript
+import {  WArea } from "@my-plugins/vue-web";
+
+```
+
+# 方法
+
+```javascript
+
+//获取验证结果
+this.$refs.area.validate()
+
+//重置验证
+this.$refs.area.reset()
+
+```
+
+
+# 基本用法
+
+
+```javascript
+<template>
+   <WArea 
+    :provinceId.sync="provinceId"  
+    :cityId.sync="cityId"  
+    :areaId.sync="areaId" 
+
+    :provinceName.sync='provinceName'
+    :cityName.sync='cityName'
+    :areaName.sync='areaName'
+
+    :isEmpty="true"
+    ref="area" 
+    :ruleStr="[]">
+  </WArea>
+</template>
+```
+
+
+<Canvas of={WAreaStories.Base} />
+
+
+
+
+
+
