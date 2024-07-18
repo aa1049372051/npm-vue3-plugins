@@ -1,5 +1,6 @@
 <template>
   <div :class="divWidth ? 'width100' : ''">
+    <h1 class="text-3xl font-bold underline">upload!</h1>
     <el-upload
       class="upload-demo fl wid90 myWOssUpload"
       v-if="showAdd"

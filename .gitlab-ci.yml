@@ -1,6 +1,6 @@
 variables:
-  npmAddress: "121.36.160.77:4873"
-  token: "MDAxYzg3ZjliZTU4MTRhZTc0ZmRhOTdiZTIwN2FjNjM6OTVlYTIxYWY2OWExOGE2NzdjZTBjZTRh"
+  npmAddress: "113.44.71.124:4873"
+  token: "ODAyNGJhMTk1ZWUxMWFjN2JmNjI0MjJjMmQ4YTJiZjA6YjY4ZTBkNzI1YjIzMTY2MjBhODQxODE0YzdjMGM0Y2EzNzY1YTM4OA=="
 
 .job_template: &job_definition
   before_script:

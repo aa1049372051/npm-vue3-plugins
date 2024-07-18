@@ -1,9 +1,9 @@
 // packages / index.js
-
+import './assets/base.css'
 // 导入单个组件
 import WGridView from './components/wgridview/index'
 import StatusTips from './components/statustips/index'
-import WOssUpload from './components/wossupload/index'
+import Upload from './components/upload/index'
 import WArea from './components/warea/index'
 import Editor from './components/editor/index'
 import FileList from "./components/flieList/index"
@@ -16,7 +16,7 @@ const components = [
     WGridView,
     StatusTips,
     WArea,
-    WOssUpload,
+    Upload,
     Editor,
     FileList
 ]
@@ -38,7 +38,7 @@ export {
     WGridView,
     StatusTips,
     WArea,
-    WOssUpload,
+    Upload,
     Editor,
     utils,
     plugins,

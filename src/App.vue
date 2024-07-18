@@ -5,7 +5,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 // import { WGridView } from "@my-plugins/vue-web";
 // import {
 //   WGridView,
-//   WOssUpload,
+//   Upload,
 //   WArea,
 //   utils,
 //   plugins,
@@ -14,10 +14,10 @@ import HelloWorld from "./components/HelloWorld.vue";
 // } from "@my-plugins/vue-web";
 // import "@my-plugins/vue-web/lib/style.css";
 // 引用vue-web样式
-import "../lib/style.css";
+// import "../lib/style.css";
 import {
   WGridView,
-  WOssUpload,
+  Upload,
   // WArea,
   utils,
   plugins,
@@ -56,6 +56,7 @@ watch(content, (value) => {
 
 <template>
   <div>
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
@@ -66,7 +67,7 @@ watch(content, (value) => {
       <Editor style="height:200px" v-model="content"></Editor>
     </el-row> -->
     <!-- <WArea></WArea> -->
-    <WOssUpload
+    <Upload
       importType="Web"
       ref="myfile"
       :my-file="{
@@ -83,7 +84,7 @@ watch(content, (value) => {
       :show-file-name="false"
     >
       <el-button link type="primary">上传</el-button>
-    </WOssUpload>
+    </Upload>
     <el-button @click="console.log(myfile.fileList)">获取图片列表</el-button>
     <WGridView
       :closePage="false"
