@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import WArea from "../src/main.vue";
+import area from "../src/main.vue";
 
-const meta: Meta<typeof WArea> = {
-  component: WArea,
+const meta: Meta<typeof area> = {
+  component: area,
   tags: ["autodocs"],
-  title: "COMPONENTS/WArea",
+  title: "COMPONENTS/area",
   argTypes: {},
   decorators: [
     () => ({
@@ -24,7 +24,7 @@ const meta: Meta<typeof WArea> = {
 
 export default meta;
 
-type Story = StoryObj<typeof WArea>;
+type Story = StoryObj<typeof area>;
 
 export const Base: Story = {
   args: {},

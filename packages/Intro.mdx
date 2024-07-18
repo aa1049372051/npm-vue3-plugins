@@ -3,24 +3,24 @@
 # 安装
 
 ```Base
-pnpm install @my-plugins/vue-web
+pnpm install @plugins/vue-plugin
 ```
 
 # 更新
 
 ```Base
-pnpm update @my-plugins/vue-web
+pnpm update @plugins/vue-plugin
 ```
 
 # 引入css
 
 ```javascript
-import "@my-plugins/vue-web/dist/style.css";
+import "@plugins/vue-plugin/dist/style.css";
 ```
 # utils方法使用
 
 ```javascript
-import { utils } from "@my-plugins/vue-web";
+import { utils } from "@plugins/vue-plugin";
 
 const { Toast, formatTime,httpV2 } = utils;
 
@@ -35,7 +35,7 @@ const { Toast, formatTime,httpV2 } = utils;
     
 2.  设置 `pnpm` 的 `registry` 为开发源
 ```Base
-    pnpm config set registry http://172.23.50.21:4873/
+    pnpm config set registry http://xxx.xx.xx.xx:xxxx/
 ```
 
 3.  执行命令 `pnpm login` 登录到 `pnpm`
