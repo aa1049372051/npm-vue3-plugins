@@ -23,7 +23,7 @@ import {FileList} from '@my-plugins/vue-web'
   </div>-->
   <div class="float-left w-11/12">
     <span v-show="false">{{ funcFileLoading }}</span>
-    <ul class="clear">
+    <ul class="clear-both">
       <li class="float-left relative mr-2.5 mb-2.5" v-for="(item, index) in newFile" @click="show(item, index)"
         :key="index">
         <!-- <i class="del" v-if="isDelete">
@@ -35,55 +35,56 @@ import {FileList} from '@my-plugins/vue-web'
               <div v-if="item.fileName">{{ item.fileName }}</div>
             </template>
             <div class="border-gray-300 border-2 w-9 h-9">
-              <img class="pointer w-full h-full" v-if="playType.indexOf(item.myFileType) >= 0 && !item.filePlaying"
+              <img class="cursor-pointer w-full h-full"
+                v-if="playType.indexOf(item.myFileType) >= 0 && !item.filePlaying"
                 src="../../../assets/images/icon/playing.png" />
-              <img class="pointer w-full h-full" v-else-if="
+              <img class="cursor-pointer w-full h-full" v-else-if="
                 playType.indexOf(item.myFileType) >= 0 && item.filePlaying
               " src="../../../assets/images/icon/myplaying.gif" />
-              <img class="pointer w-full h-full" v-else-if="
+              <img class="cursor-pointer w-full h-full" v-else-if="
                 item.myFileType == 'xlsx' || item.myFileType == 'xls'
               " src="../../../assets/images/icon/excel.png" />
-              <img class="pointer w-full h-full" v-else-if="item.myFileType == 'pdf'"
+              <img class="cursor-pointer w-full h-full" v-else-if="item.myFileType == 'pdf'"
                 src="../../../assets/images/icon/pdf.png" />
-              <img class="pointer w-full h-full" v-else-if="item.myFileType == 'txt'"
+              <img class="cursor-pointer w-full h-full" v-else-if="item.myFileType == 'txt'"
                 src="../../../assets/images/icon/txt.png" />
-              <img class="pointer w-full h-full" v-else-if="
+              <img class="cursor-pointer w-full h-full" v-else-if="
                 item.myFileType == 'ppt' || item.myFileType == 'pptx'
               " src="../../../assets/images/icon/ppt.png" />
-              <img class="pointer w-full h-full" v-else-if="
+              <img class="cursor-pointer w-full h-full" v-else-if="
                 item.myFileType == 'doc' || item.myFileType == 'docx'
               " src="../../../assets/images/icon/word.png" />
-              <img class="pointer w-full h-full" v-else-if="item.myFileType == 'rar' || item.myFileType == 'zip'"
+              <img class="cursor-pointer w-full h-full" v-else-if="item.myFileType == 'rar' || item.myFileType == 'zip'"
                 src="../../../assets/images/icon/ppt.png" />
               <template v-else>
-                <el-image class="pointer w-full h-full" v-if="isViewImg" :z-index="99999" :src="item.myPath"
+                <el-image class="cursor-pointer w-full h-full" v-if="isViewImg" :z-index="99999" :src="item.myPath"
                   :preview-src-list="images" />
-                <img v-else class="pointer w-full h-full" isImg="1" :src="item.myPath" />
+                <img v-else class="cursor-pointer w-full h-full" isImg="1" :src="item.myPath" />
               </template>
             </div>
           </el-tooltip>
         </template>
         <template v-else>
           <div class="border-gray-300 border-2 w-9 h-9">
-            <img class="pointer w-full h-full" v-if="playType.indexOf(item.myFileType) >= 0 && !item.filePlaying"
+            <img class="cursor-pointer w-full h-full" v-if="playType.indexOf(item.myFileType) >= 0 && !item.filePlaying"
               src="../../../assets/images/icon/playing.png" />
-            <img class="pointer w-full h-full" v-else-if="
+            <img class="cursor-pointer w-full h-full" v-else-if="
               playType.indexOf(item.myFileType) >= 0 && item.filePlaying
             " src="../../../assets/images/icon/myplaying.gif" />
-            <img class="pointer w-full h-full" v-else-if="item.myFileType == 'xlsx' || item.myFileType == 'xls'"
+            <img class="cursor-pointer w-full h-full" v-else-if="item.myFileType == 'xlsx' || item.myFileType == 'xls'"
               src="../../../assets/images/icon/excel.png" />
-            <img class="pointer w-full h-full" v-else-if="item.myFileType == 'pdf'"
+            <img class="cursor-pointer w-full h-full" v-else-if="item.myFileType == 'pdf'"
               src="../../../assets/images/icon/pdf.png" />
-            <img class="pointer w-full h-full" v-else-if="item.myFileType == 'txt'"
+            <img class="cursor-pointer w-full h-full" v-else-if="item.myFileType == 'txt'"
               src="../../../assets/images/icon/txt.png" />
-            <img class="pointer w-full h-full" v-else-if="item.myFileType == 'ppt' || item.myFileType == 'pptx'"
+            <img class="cursor-pointer w-full h-full" v-else-if="item.myFileType == 'ppt' || item.myFileType == 'pptx'"
               src="../../../assets/images/icon/ppt.png" />
-            <img class="pointer w-full h-full" v-else-if="item.myFileType == 'doc' || item.myFileType == 'docx'"
+            <img class="cursor-pointer w-full h-full" v-else-if="item.myFileType == 'doc' || item.myFileType == 'docx'"
               src="../../../assets/images/icon/word.png" />
             <template v-else>
-              <el-image class="pointer w-full h-full" :z-index="99999" v-if="isViewImg" :src="item.myPath"
+              <el-image class="cursor-pointer w-full h-full" :z-index="99999" v-if="isViewImg" :src="item.myPath"
                 :preview-src-list="images" />
-              <img v-else class="pointer w-full h-full" isImg="1" :src="item.myPath" />
+              <img v-else class="cursor-pointer w-full h-full" isImg="1" :src="item.myPath" />
             </template>
           </div>
         </template>
@@ -550,18 +551,4 @@ const newFile = computed(() => {
 //   },
 // };
 </script>
-<style>
-.clear {
-  zoom: 1;
-}
-
-.clear:before,
-.clear:after {
-  display: table;
-  content: "";
-}
-
-.pointer {
-  cursor: pointer;
-}
-</style>
+<style></style>
