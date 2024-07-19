@@ -23,8 +23,8 @@ import {FileList} from '@my-plugins/vue-web'
   </div>-->
   <div class="float-left w-11/12">
     <span v-show="false">{{ funcFileLoading }}</span>
-    <ul class="clear-both">
-      <li class="float-left relative mr-2.5 mb-2.5" v-for="(item, index) in newFile" @click="show(item, index)"
+    <ul class="flex">
+      <li class="relative mr-2.5 mb-2.5" v-for="(item, index) in newFile" @click="show(item, index)"
         :key="index">
         <!-- <i class="del" v-if="isDelete">
           <img src="../../../assets/images/icon/del.png" />
