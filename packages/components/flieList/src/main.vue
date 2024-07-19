@@ -202,7 +202,7 @@ function show(arg, index) {
 
 const upUrl = computed(() => {
   let store = useOssStore(window.pinia);
-  return "https://inews.gtimg.com" || store.upOss;
+  return store.upOss;
 })
 const images = computed(() => {
   if (!props.file) {
