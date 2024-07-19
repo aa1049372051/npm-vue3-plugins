@@ -19,61 +19,86 @@
 -->
 <template>
   <div class="text-center" :style="{ 'margin-top': top }">
-    <div style="display: inline-block; vertical-align: middle">
+    <div class="inline-block align-middle">
       <img src="../../../assets/images/empty.png" v-if="type == 'empty'" />
       <img src="../../../assets/images/error.png" v-if="type == 'error'" />
       <img src="../../../assets/images/cry.png" v-if="type == 'cry'" />
       <img src="../../../assets/images/address.png" v-if="type == 'address'" />
     </div>
-    <div style="display: inline-block; vertical-align: middle">
+    <div class="inline-block align-middle">
       <slot name="title">
-        <div class="text-left hei40" v-if="!content">
-          <span class="ft-size16">无数据</span>
+        <div class="text-left leading-10" v-if="!content">
+          <span class="text-base">无数据</span>
         </div>
       </slot>
       <slot name="tips">
-        <a class="ft-size12" v-if="content">{{ content }}</a>
+        <a class="text-xs" v-if="content">{{ content }}</a>
       </slot>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "StatusTips",
-  props: {
-    content: {
-      type: String,
-      default() {
-        return "";
-      },
-    },
-    top: {
-      type: String,
-      default() {
-        return "20px";
-      },
-    },
-    type: {
-      type: String,
-      default() {
-        return "empty"; //empty error 空数据  异常
-      },
+<script setup lang="ts">
+import { ref } from "vue";
+const str = ref({
+  empty: "暂时没有数据",
+  error: "加载失败",
+})
+const props = defineProps({
+  content: {
+    type: String,
+    default() {
+      return "";
     },
   },
-  components: {},
-  computed: {},
-  data() {
-    return {
-      str: {
-        empty: "暂时没有数据",
-        error: "加载失败",
-      },
-    };
+  top: {
+    type: String,
+    default() {
+      return "20px";
+    },
   },
-  methods: {},
-  mounted() {},
-};
+  type: {
+    type: String,
+    default() {
+      return "empty"; //empty error 空数据  异常
+    },
+  },
+})
+// export default {
+//   name: "StatusTips",
+//   props: {
+//     content: {
+//       type: String,
+//       default() {
+//         return "";
+//       },
+//     },
+//     top: {
+//       type: String,
+//       default() {
+//         return "20px";
+//       },
+//     },
+//     type: {
+//       type: String,
+//       default() {
+//         return "empty"; //empty error 空数据  异常
+//       },
+//     },
+//   },
+//   components: {},
+//   computed: {},
+//   data() {
+//     return {
+//       str: {
+//         empty: "暂时没有数据",
+//         error: "加载失败",
+//       },
+//     };
+//   },
+//   methods: {},
+//   mounted() { },
+// };
 </script>
 
 <style></style>
