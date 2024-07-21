@@ -26,6 +26,7 @@ dist-ssr
 .svn
 .svnbk
 pnpm-lock.yaml
+.github/*
 
 *storybook.log
 
