@@ -1,9 +1,14 @@
-import { Meta, Source, Canvas, Primary, Controls, Story } from "@storybook/blocks";
-import * as WossUploadStories from "./wossupload.stories.ts";
+import {
+  Meta,
+  Source,
+  Canvas,
+  Primary,
+  Controls,
+  Story,
+} from "@storybook/blocks";
+import * as UploadStories from "./upload.stories.ts";
 
-
-<Meta of={WossUploadStories} />
-
+<Meta of={UploadStories} />
 
 # 文件上传
 
@@ -18,15 +23,10 @@ import * as WossUploadStories from "./wossupload.stories.ts";
 # 页面引用
 
 ```javascript
-import {  WOssUpload } from "@my-plugins/vue-web";
-
+import { WOssUpload } from "@my-plugins/vue-web";
 ```
 
-
-
-
 # 上传基本用法
-
 
 ```javascript
 <template>
@@ -53,20 +53,16 @@ import {  WOssUpload } from "@my-plugins/vue-web";
 import { ref } from "vue";
 const uploadRef = ref();
 //父组件中获取上传文件列表
-uploadRef.value.fileList
+uploadRef.value.fileList;
 //判断是否在上传 true在上传/false不在
-uploadRef.value.isStart  
-
+uploadRef.value.isStart;
 ```
 
 # 实现用户上传
 
-<Canvas of={WossUploadStories.Base} />
-
-
+<Canvas of={UploadStories.Base} />
 
 # fileList初始化文件
-
 
 ```javascript
 <template>
@@ -94,4 +90,4 @@ uploadRef.value.isStart
 
 # 实现用户上传
 
-<Canvas of={WossUploadStories.Files} />
+<Canvas of={UploadStories.Files} />

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import WOssUpload from "../src/main.vue";
+import Upload from "../src/main.vue";
 
-const meta: Meta<typeof WOssUpload> = {
-  component: WOssUpload,
+const meta: Meta<typeof Upload> = {
+  component: Upload,
   tags: ["autodocs"],
-  title: "COMPONENTS/WOssUpload",
+  title: "COMPONENTS/Upload",
   argTypes: {},
   parameters: {
     componentSubtitle: "上传组件",
@@ -19,18 +19,18 @@ const meta: Meta<typeof WOssUpload> = {
 
 export default meta;
 
-type Story = StoryObj<typeof WOssUpload>;
+type Story = StoryObj<typeof Upload>;
 
 export const Base: Story = {
   render: (args) => ({
-    components: { WOssUpload },
+    components: { Upload },
     setup() {
       return { args };
     },
     template: `
-      <WOssUpload ref="file" v-bind="args">
+      <Upload ref="file" v-bind="args">
         <el-button size="small" type="primary">本地上传</el-button>
-      </WOssUpload>
+      </Upload>
       `,
   }),
   args: {
@@ -46,14 +46,14 @@ export const Base: Story = {
 
 export const Files: Story = {
   render: (args) => ({
-    components: { WOssUpload },
+    components: { Upload },
     setup() {
       return { args };
     },
     template: `
-      <WOssUpload ref="file" v-bind="args">
+      <Upload ref="file" v-bind="args">
         <el-button size="small" type="primary">本地上传</el-button>
-      </WOssUpload>
+      </Upload>
       `,
   }),
   args: {
